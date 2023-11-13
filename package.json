@@ -1,0 +1,37 @@
+{
+  "name": "@sctg/okteto-auto-token",
+  "version": "0.9.1",
+  "description": "generate kube.config automatically for Okteto",
+  "main": "dist/index.js",
+  "scripts": {
+    "build-dev": "npx tsc",
+    "build": "npm run build-dev && rm -rf dist/config dist/index* dist/kube* && mv dist/okteto-tokens/* dist/ && rm -rf dist/okteto-tokens",
+    "start": "npm run build-dev && node dist/index.js",
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\"",
+    "test": "echo 'Not yet' && exit 0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "AGPL-3.0-or-later",
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.9.0",
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.0.1",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "js-yaml": "^4.1.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public",
+    "@sctg:registry": "https://npm.pkg.github.com",
+    "tag": "latest"
+  }
+}
