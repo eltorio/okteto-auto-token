@@ -31,7 +31,7 @@
   },
   "publishConfig": {
     "access": "public",
-    "@sctg:registry": "https://npm.pkg.github.com",
+    "@sctg:registry": "https://registry.npmjs.org/",
     "tag": "latest"
   }
 }
